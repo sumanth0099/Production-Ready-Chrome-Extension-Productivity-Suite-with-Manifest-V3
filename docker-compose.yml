@@ -1,0 +1,11 @@
+services:
+  builder:
+    build:
+      context: .
+      target: export
+    volumes:
+      - ./:/output
+    # Use a simple command to "see" the build completion or to copy if needed, 
+    # though with buildkit/target export it works slightly differently.
+    # To ensure the file is placed in the host directory via standard compose:
+    image: productivity-suite-builder
